@@ -1,9 +1,14 @@
-import React from 'react'
+import "./globals.css";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="auth">{children}</main>
-  )
+    <html lang="en">
+      <body>
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
+      </body>
+    </html>
+  );
 }
-
-export default Layout
